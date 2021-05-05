@@ -16,11 +16,13 @@ BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lparam) {
 	for (int x = 0; x < 16; x++) {
 		if (str[x] != gd[x]) {
 			idkanymore = true;
+                        CloseHandle(hand);
 			return TRUE;
 		}
 	}
 	if (idkanymore == false) {
 		whyamistilldoingthis = true;
+                CloseHandle(hand);
 		return FALSE;
 		
 	}
