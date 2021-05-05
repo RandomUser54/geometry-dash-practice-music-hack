@@ -5,7 +5,6 @@ BYTE buff0[5] = { 0xE9,0x79,0x06,0x00,0x00 };
 BYTE buff[6] = { 0x90,0x90,0x90,0x90,0x90,0x90 };
 BYTE buff1[2] = { 0x90,0x90 };
 DWORD pid;
-DWORD idk;
 bool whyamistilldoingthis = false;
 bool exists = false;
 BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lparam) {
@@ -62,9 +61,9 @@ int __stdcall WinMain(HINSTANCE hinst, HINSTANCE previns, LPSTR cmdline, int sho
 			WriteProcessMemory(proc, ptr2, &buff1, sizeof(buff1), NULL);
 			WriteProcessMemory(proc, ptr3, &buff1, sizeof(buff1), NULL);
 
-			VirtualProtectEx(proc, ptr, sizeof(buff1), prev2, &prev2);
+			VirtualProtectEx(proc, ptr, sizeof(buff), prev, &prev);
 			VirtualProtectEx(proc, ptr1, sizeof(buff1), prev1, &prev1);
-			VirtualProtectEx(proc, ptr2, sizeof(buff), prev, &prev);
+			VirtualProtectEx(proc, ptr2, sizeof(buff), prev2, &prev2);
 			VirtualProtectEx(proc, ptr3, sizeof(buff1), prev3, &prev3);
 			
 			exists = true;
