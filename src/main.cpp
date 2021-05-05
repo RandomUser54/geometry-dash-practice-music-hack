@@ -41,7 +41,6 @@ int __stdcall WinMain(HINSTANCE hinst, HINSTANCE previns, LPSTR cmdline, int sho
 			DWORD cbneeded;
 			EnumProcessModules(proc, mods, sizeof(mods), &cbneeded);
 			char name[50];
-			int size = GetModuleBaseNameA(proc, mods[0], (LPSTR)&name, sizeof(name) / sizeof(name[1]));
 			DWORD prev;
 			DWORD prev1;
 			DWORD prev2;
