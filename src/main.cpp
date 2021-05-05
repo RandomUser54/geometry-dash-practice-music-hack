@@ -66,7 +66,7 @@ int __stdcall WinMain(HINSTANCE hinst, HINSTANCE previns, LPSTR cmdline, int sho
 			VirtualProtectEx(proc, ptr2, sizeof(buff1), prev2, &prev2);
 			VirtualProtectEx(proc, ptr3, sizeof(buff1), prev3, &prev3);
 			
-                        CloseHandle(proc)
+                        CloseHandle(proc);
 			exists = true;
 		}
 		whyamistilldoingthis = false;
